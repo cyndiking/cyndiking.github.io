@@ -11,9 +11,14 @@ a:hover,a:focus {color: #0085a1;}
 .header-git{position:absolute;width:100px;height:100px;top:20px;left:50%;margin-left:-100px;background:url(../img/avatar-icon.png) no-repeat;background-size:contain;border-radius: 50%;}
 .nav{text-align: right;}
 .nav li{display:inline-block;margin:0 12px;}
-.nav li a {line-height:80px;font-size: 12px;font-weight:bolder;}
+.nav li>a {line-height:80px;font-size:14px;font-weight:bolder;}
 /* animation:这几个参数的代表的意思：动画的名称，执行的时间，执行的速度曲线，延迟的时间，动画播放的次数，规定是否应该轮流反向播放动画，forwards：当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。*/
 .header-action{animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-moz-animation:headerAction 2s ease-in-out 0s 1 alternate forwards; -o-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;}
+.classify-farter{position: relative;}
+.classify-title:hover .classify-list{display:block;color: red;}
+.classify-list{display:none;position: absolute;top:60px;left:-15px;width:60px;border:1px solid red;text-align: center;}
+.classify-list div{padding:5px 0;}
+.classify-list a{font-size:12px;font-weight: bolder;}
 #content{margin:0 auto;width:950px;border-top:1px solid #fff;}
 #content ul{margin-top:150px;}
 .file-list li{padding-bottom:30px;border-bottom: 1px solid #eee;}
