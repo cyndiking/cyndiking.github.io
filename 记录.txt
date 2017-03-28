@@ -7,3 +7,8 @@
 4：set一下ssh key
 5:git clone 克隆一下github上的项目
 6：git init 到主分支了就（好像是这个意思吧）
+
+合并：
+http://www.cnblogs.com/horanly/p/6265182.html
+报错：
+http://blog.csdn.net/qq_27570955/article/details/52587562
