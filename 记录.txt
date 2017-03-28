@@ -1,0 +1,9 @@
+这次是在自己电脑重新克隆下来的文件，也熟悉了一下使git,这个文件就是实验一下可不可以；
+
+先说一下这次重新下载git的使用过程
+1:git config --global user.name "xxxx"
+2:git config --global user.email "xxxx"
+3:ssh-keygen -t rsa -C "youremail@example.com" 一路回车
+4：set一下ssh key
+5:git clone 克隆一下github上的项目
+6：git init 到主分支了就（好像是这个意思吧）
