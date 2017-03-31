@@ -1,12 +1,15 @@
 $(function(){
 	// 头部导航
 	$(window).scroll(function() {
+        // 头部
         if($(document).scrollTop() > 50){
+            $("#header").removeClass('header-back-action')
         	$("#header").addClass('header-action')
         }else{
         	$("#header").removeClass('header-action')
+            $("#header").addClass('header-back-action')
         }
-
+        // 返回顶部
         if($(document).scrollTop() > 200){
             $("#back-top").css({"display":"block"})
             var dis = $(document).height()-$(window).height()-$(document).scrollTop();

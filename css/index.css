@@ -14,6 +14,7 @@ a:hover,a:focus {color: #0085a1;}
 .nav li>a ,.classify-title{line-height:80px;font-size:14px;font-weight:bolder;}
 /* animation:这几个参数的代表的意思：动画的名称，执行的时间，执行的速度曲线，延迟的时间，动画播放的次数，规定是否应该轮流反向播放动画，forwards：当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。*/
 .header-action{animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-moz-animation:headerAction 2s ease-in-out 0s 1 alternate forwards; -o-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;}
+.header-back-action{animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;-moz-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards; -o-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;}
 .classify-farter{position: relative;}
 .classify-title:hover .classify-list{display:block;color: red;}
 .classify-list{display:none;position: absolute;top:54px;left:-8px;width:60px;border:1px solid red;border-top:none;text-align: center;font-size:12px; }
@@ -60,6 +61,31 @@ to {top:-150px;}
 {
 from {top:0;}
 to {top:-150px;}
+}
+
+
+@keyframes headerBackAction
+{
+from {top:-150px;}
+to {top:0;}
+}
+
+@-moz-keyframes headerBackAction /* Firefox */
+{
+from {top:-150px;}
+to {top:0;}
+}
+
+@-webkit-keyframes headerBackAction /* Safari 和 Chrome */
+{
+from {top:-150px;}
+to {top:0;}
+}
+
+@-o-keyframes headerBackAction /* Opera */
+{
+from {top:-150px;}
+to {top:0;}
 }
 
 
