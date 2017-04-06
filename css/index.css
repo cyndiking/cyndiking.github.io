@@ -6,15 +6,17 @@ h1,h2,h3,h4,h5,h6 {font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
 a {color: #666;}
 a:hover,a:focus {color: #0085a1;}
 
-#header{position:fixed;width:100%;height:80px;background: #F5F5F5;border-bottom: 1px solid #EAEAEA;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
-#header h1{float: left;line-height: 80px;margin-left:20px;}
-.header-git{position:absolute;width:100px;height:100px;top:20px;left:50%;margin-left:-100px;background:url(../img/avatar-icon.png) no-repeat;background-size:contain;border-radius: 50%;}
+#header{padding:15px 0;position:fixed;width:100%;height:50px;line-height: 50px;background: #F5F5F5;border-bottom: 1px solid #EAEAEA;font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+#header h1{float: left;line-height: 50px;margin-left:20px;}
+.header-icon{position:absolute;width:100px;height:100px;top:20px;left:50%;margin-left:-100px;background:url(../img/avatar-icon.png) no-repeat;background-size:contain;border-radius: 50%;}
 .nav{text-align: right;}
 .nav li{display:inline-block;margin:0 12px;}
-.nav li>a ,.classify-title{line-height:80px;font-size:14px;font-weight:bolder;}
+.nav li>a ,.classify-title{line-height:50px;font-size:14px;font-weight:bolder;}
 /* animation:这几个参数的代表的意思：动画的名称，执行的时间，执行的速度曲线，延迟的时间，动画播放的次数，规定是否应该轮流反向播放动画，forwards：当动画完成后，保持最后一个属性值（在最后一个关键帧中定义）。*/
-.header-action{animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;-moz-animation:headerAction 2s ease-in-out 0s 1 alternate forwards; -o-animation:headerAction 2s ease-in-out 0s 1 alternate forwards;}
+.header-action{animation:headerAction 1s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerAction 1s ease-in-out 0s 1 alternate forwards;-moz-animation:headerAction 1s ease-in-out 0s 1 alternate forwards; -o-animation:headerAction 1s ease-in-out 0s 1 alternate forwards;}
 .header-back-action{animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;-moz-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards; -o-animation:headerBackAction 1s ease-in-out 0s 1 alternate forwards;}
+.header-icon-action{animation:headerIconAction 1s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerIconAction 1s ease-in-out 0s 1 alternate forwards;}
+.header-icon-back-action{animation:headerIconBackAction 1s ease-in-out 0s 1 alternate forwards;-webkit-animation:headerIconBackAction 1s ease-in-out 0s 1 alternate forwards;}
 .classify-farter{position: relative;}
 .classify-title:hover .classify-list{display:block;color: red;}
 .classify-list{display:none;position: absolute;top:54px;left:-8px;width:60px;border:1px solid red;border-top:none;text-align: center;font-size:12px; }
@@ -41,54 +43,103 @@ a:hover,a:focus {color: #0085a1;}
 /* 动画 */
 @keyframes headerAction
 {
-from {top:0;}
-to {top:-150px;}
+from {padding:15px 0;}
+to {padding:0;}
 }
 
 @-moz-keyframes headerAction /* Firefox */
 {
-from {top:0;}
-to {top:-150px;}
+from {padding:15px 0;}
+to {padding:0;}
 }
 
 @-webkit-keyframes headerAction /* Safari 和 Chrome */
 {
-from {top:0;}
-to {top:-150px;}
+from {padding:15px 0;}
+to {padding:0;}
 }
 
 @-o-keyframes headerAction /* Opera */
 {
-from {top:0;}
-to {top:-150px;}
+from {padding:15px 0;}
+to {padding:0;}
 }
+
 
 
 @keyframes headerBackAction
 {
-from {top:-150px;}
+from {padding:0;}
 to {top:0;}
 }
 
 @-moz-keyframes headerBackAction /* Firefox */
 {
 from {top:-150px;}
-to {top:0;}
+to {padding:15px 0;}
 }
 
 @-webkit-keyframes headerBackAction /* Safari 和 Chrome */
 {
 from {top:-150px;}
-to {top:0;}
+to {padding:15px 0;}
 }
 
 @-o-keyframes headerBackAction /* Opera */
 {
 from {top:-150px;}
-to {top:0;}
+to {padding:15px 0;}
 }
 
+/* 头部图标的动画 */
+@keyframes headerIconAction
+{
+from {top:20px;opacity: 1;}
+to {top:0;opacity: 0;}
+}
 
+@-moz-keyframes headerIconAction /* Firefox */
+{
+from {top:20px;opacity: 1;}
+to {top:0;opacity: 0;}
+}
+
+@-webkit-keyframes headerIconAction /* Safari 和 Chrome */
+{
+from {top:20px;opacity: 1;}
+to {top:0;opacity: 0;}
+}
+
+@-o-keyframes headerIconAction /* Opera */
+{
+from {top:20px;opacity: 1;}
+to {top:0;opacity: 0;}
+}
+
+@keyframes headerIconBackAction
+{
+from {top:0;opacity: 0;}
+to {top:20px;opacity: 1;}
+}
+
+@-moz-keyframes headerIconBackAction /* Firefox */
+{
+from {top:0;opacity: 0;}
+to {top:20px;opacity: 1;}
+}
+
+@-webkit-keyframes headerIconBackAction /* Safari 和 Chrome */
+{
+from {top:0;opacity: 0;}
+to {top:20px;opacity: 1;}
+}
+
+@-o-keyframes headerIconBackAction /* Opera */
+{
+from {top:0;opacity: 0;}
+to {top:20px;opacity: 1;}
+}
+/* 点击联系我的动画 */
 @keyframes contact-me
 {
 from {opacity: 1;transform:scale(1)}
