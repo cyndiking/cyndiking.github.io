@@ -3,15 +3,15 @@ $(function(){
 	$(window).scroll(function() {
         // 头部
         if($(document).scrollTop() > 50){
-            $("#header").removeClass('header-back-action')
-        	$("#header").addClass('header-action')
-            $(".header-icon").addClass('header-icon-action')
-             $(".header-icon").removeClass('header-icon-back-action')
+            $("#header").removeClass('header-back-action');
+        	$("#header").addClass('header-action');
+            $(".header-icon").addClass('header-icon-action');
+            $(".header-icon").removeClass('header-icon-back-action');
         }else{
-        	$("#header").removeClass('header-action')
-            $("#header").addClass('header-back-action')
-            $(".header-icon").removeClass('header-icon-action')
-             $(".header-icon").addClass('header-icon-back-action')
+        	$("#header").removeClass('header-action');
+            $("#header").addClass('header-back-action');
+            $(".header-icon").removeClass('header-icon-action');
+            $(".header-icon").addClass('header-icon-back-action');
         }
         // 返回顶部
         if($(document).scrollTop() > 200){
