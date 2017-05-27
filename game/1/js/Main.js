@@ -1,7 +1,3 @@
-if(LGlobal.canTouch){
-	LGlobal.stageScale = LStageScaleMode.EXACT_FIT;
-	LSystem.screen(LStage.FULL_SCREEN);
-}
 //声明变量
 //进度条显示层，背景层，方块绘制层，方块预览层
 var loadingLayer,backLayer,graphicsMap,nextLayer;
