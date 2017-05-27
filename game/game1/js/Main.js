@@ -3,11 +3,11 @@
 var loadingLayer,backLayer,graphicsMap,nextLayer;
 var imglist = {};
 var imgData = new Array(
-	{name:"backImage",path:"../../images/backImage.png"},
-	{name:"r1",path:"../../images/r1.png"},
-	{name:"r2",path:"../../images/r2.png"},
-	{name:"r3",path:"../../images/r3.png"},
-	{name:"r4",path:"../../images/r4.png"}
+	{name:"backImage",path:"../images/backImage.png"},
+	{name:"r1",path:"../images/r1.png"},
+	{name:"r2",path:"../images/r2.png"},
+	{name:"r3",path:"../images/r3.png"},
+	{name:"r4",path:"../images/r4.png"}
 	);
 //方块类变量，用于生成新的方块
 var BOX;
