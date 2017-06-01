@@ -6,14 +6,21 @@
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-touch-fullscreen" content="yes" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-<script type="text/javascript" src="./js/lufylegend-1.5.1.js"></script> 
+<script type="text/javascript" src="./js/lufylegend-1.10.1.min.js"></script> 
+<script type="text/javascript">
+	if(LGlobal.canTouch){
+	LGlobal.stageScale = LStageScaleMode.EXACT_FIT;
+	LSystem.screen(LStage.FULL_SCREEN);
+	}
+</script>
 <script type="text/javascript" src="./js/Main.js"></script> 
 <script type="text/javascript" src="./js/Box.js"></script> 
+
 <style>
 	*{padding: 0;margin:0;}
 </style>
 </head>
-<body>
+<body style="margin:0;padding:0;">
 <div id="mylegend">loading……</div>
 <script>
 function doScroll() {
@@ -24,7 +31,7 @@ function doScroll() {
 window.onload = function() {
 	setTimeout(doScroll, 100);
 	//初始化
-	init(30,"mylegend",320,480,main,LEvent.INIT);
+	init(30,"mylegend",320,430,main,LEvent.INIT);
 
 }
 window.onorientationchange = function() {

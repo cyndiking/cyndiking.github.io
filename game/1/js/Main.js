@@ -69,7 +69,7 @@ function main(){
 	//背景层初始化
 	backLayer = new LSprite();
 	//在背景层上绘制黑色背景
-	backLayer.graphics.drawRect(1,"#000000",[0,0,320,480],true,"#000000");
+	backLayer.graphics.drawRect(1,"#000000",[0,0,800,450],true,"#000000");
 	//背景显示
 	addChild(backLayer);
 	//进度条读取层初始化
