@@ -1,0 +1,8 @@
+1：github新建一个仓库；
+2：git clone
+3：git init
+4：git add .
+5：git commit -m "ceshi"
+6：git push -u origin master
+ 为什么不用重新添加远程仓库？
+是因为我是在GitHub上clone下来的，他自己默认就建立的链接；
