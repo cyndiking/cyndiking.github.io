@@ -6,3 +6,9 @@
 6：git push -u origin master
  为什么不用重新添加远程仓库？
 是因为我是在GitHub上clone下来的，他自己默认就建立的链接；
+
+github 遇到提交不上去 报错提示不能上传到git@github.com ....
+use https://github.com....
+的解决方案
+
+http://blog.csdn.net/pilqc2009/article/details/50482055
