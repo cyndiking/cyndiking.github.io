@@ -1,100 +1,86 @@
-<template>
+<template lang="html">
+
   <div class="cartcontrol">
-    <transition name="fade">
-      <div class="cart-decrease" v-show="food.count>0" @click.stop.prevent="decreaseCart" transiton="fade">
-       <!-- <transition name="move">-->
-          <span class="inner icon-remove_circle_outline" transition="move"></span>
-        <!--</transition>-->
+    <transition name="fadeRotate">
+      <div class="cart-decrease" v-show="food.count>0" @click.stop.prevent="decreaseCart()">
+          <span class="icon-remove_circle_outline inner"></span>
       </div>
     </transition>
-    <div class="cart-count" v-show="food.count >0">{{food.count}}</div>
-    <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
+    <div class="cart-count" v-show="food.count>0">
+      {{food.count}}
+    </div>
+    <div class="cart-add" @click.stop.prevent="addCart($event)">
+      <i class="icon-add_circle"></i>
+    </div>
   </div>
+
 </template>
 
-<script type="text/ecmascript-6">
-import Vue from 'vue';
+<script>
+import Vue from 'vue'
+
 export default {
   props: {
-      food: {
-          type: Object
-      }
-  },
-  created() {
-      console.log(1);
+    food: Object
   },
   methods: {
     addCart(event) {
-        if (!event._constructed) {
-          return;
-        }
-       if (!this.food.count) {
-          Vue.set(this.food, 'count', 1);
-//         这样就可以观测到这个变化，就是显示出来了
-       } else {
-         this.food.count ++;
-       }
-      this.$emit('drop', event.target);
-//        派发一个事件
-    },
-    decreaseCart(event) {
+      console.log(event.target);
       if (!event._constructed) {
-        return;
+        return
       }
-      if (this.food.count) {
-        this.food.count--;
+      if (!this.food.count) {
+        Vue.set(this.food, 'count', 0)
       }
+      this.food.count++;
+      this.$root.eventHub.$emit('cart.add', event.target)
+    },
+    decreaseCart() {
+      if (!event._constructed || !this.food.count) {
+        return
+      }
+      this.food.count--;
     }
   }
-};
+}
+
 </script>
 
-<style lang="stylus" rel="stylesheet/stylus">
-  .cartcontrol
-    font-size: 0
-    .cart-decrease
-      display: inline-block
-      padding: 6px
-      &.fade-enter-active, &.fade-leave-active
-        transition: opacity .5s
-        transform: translate3d(0, 0, 0)
-      &.fade-enter, &.fade-leave-to
-        opacity: 0
-        transform: translate3d(24px, 0, 0)
+<style lang="stylus">
+
+.cartcontrol
+  .cart-decrease
+    display inline-block
+    padding 6px
+    transition: all .4s linear
+    .inner
+      line-height 24px
+      font-size 24px
+      color rgb(0,160,220)
+      transition all 0.4s linear
+    &.fadeRotate-enter-active, &.fadeRotate-leave-active
+      transform translate3d(0,0,0)
       .inner
-        display: inline-block
-        line-height: 24px
-        font-size: 24px
-        color: rgb(0, 160, 220)
-        transform: rotate(0deg)
-        &.move-enter-active, &.move-leave-active
-          transition:all .5s;
-        &.move-enter, &.move-leave-to
-          transform: rotate(180deg)
-    .cart-count
-      display: inline-block
-      vertical-align: top
-      width: 12px
-      padding-top: 6px
-      line-height: 24px
-      text-align: center
-      font-size: 10px
-      color: rgb(147, 153, 159)
-    .cart-add
-      display: inline-block
-      padding: 6px
-      line-height: 24px
-      font-size: 24px
-      color: rgb(0, 160, 220)
+        display inline-block
+        transform rotate(0)
+    &.fadeRotate-enter, &.fadeRotate-leave-active
+      opacity: 0
+      transform translate3d(24px,0,0)
+      .inner
+        transform rotate(180deg)
+  .cart-count
+    display inline-block
+    vertical-align top
+    font-size 10px
+    color rgb(147,153,159)
+    line-height 24px
+    text-align center
+    padding 6px 0
+  .cart-add
+    display inline-block
+    vertical-align top
+    font-size 24px
+    color rgb(0,160,220)
+    line-height 24px
+    padding 6px
 </style>
-<!--
- if (!event._constructed) {
-          return;
-        }
-        在addcart的时候添加这段，是因为页面在不是手机端的时候，点击会执行两次
-
--->
-<!--
-http://www.cnblogs.com/Zsmile/p/6256651.html
-
--->

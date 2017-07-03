@@ -1,13 +1,8 @@
-// http://eslint.org/docs/user-guide/configuring
-
 module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
-  },
-  env: {
-    browser: true,
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
@@ -23,8 +18,15 @@ module.exports = {
     'generator-star-spacing': 0,
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
-    'semi':['error','always'],
-    'indent':0,
-    'space-before-function-paren' :0
+    'no-multiple-empty-lines': ['error', {
+      max: 2,
+      maxEOF: 2,
+      maxBOF: 2
+    }],
+    'space-before-function-paren':0,
+    'semi':0,
+    'no-new':0,
+    'no-unused-vars':0,
+    'no-undef':0
   }
 }
